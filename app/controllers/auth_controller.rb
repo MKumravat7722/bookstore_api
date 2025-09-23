@@ -1,5 +1,5 @@
 class AuthController < ApplicationController
-  skip_before_action :authenticate_user, only: [:login, :signup]
+  skip_before_action :authenticate_user, only: [ :login, :signup ]
 
   def signup
     user = User.new(signup_params)
@@ -7,17 +7,17 @@ class AuthController < ApplicationController
       token = jwt_encode({ user_id: user.id })
        render json: { user: UserSerializer.new(user).as_json, token: token }, status: :created
     else
-      render json: { errors: user.errors.full_messages }, status: :unprocessable_entity 
-    end 
+      render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def login
     user = User.find_by(email: params[:email])
     if user&.authenticate(params[:password])
-      token = jwt_encode({user_id: user.id})
+      token = jwt_encode({ user_id: user.id })
       render json: { user: UserSerializer.new(user).as_json, token: token }
     else
-      render json: { error: 'Invalid credentials' }, status: :unauthorized
+      render json: { error: "Invalid credentials" }, status: :unauthorized
     end
   end
 

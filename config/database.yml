@@ -21,12 +21,13 @@ default: &default
   host: <%= ENV["DATABASE_HOST"] || "localhost" %>
   username: <%= ENV["DATABASE_USERNAME"] || "postgres" %>
   password: <%= ENV["DATABASE_PASSWORD"] || "postgres" %>
+  # postgresql://book_store_data_base_user:rgIsPwxlE3gHEjtIsZzbYQONluEU2rD4@dpg-d4rgvda4d50c73d8ooug-a/book_store_data_base
 
 
 
 development:
   <<: *default
-  database: bookstore_api_development
+  database: content_publisher_api_development
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -60,7 +61,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: bookstore_api_test
+  database: content_publisher_api_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,9 +82,3 @@ test:
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
-#
-production:
-  <<: *default
-  database: bookstore_api_production
-  username: bookstore_api
-  password: <%= ENV["BOOKSTORE_API_DATABASE_PASSWORD"] %>

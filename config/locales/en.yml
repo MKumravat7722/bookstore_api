@@ -30,4 +30,4 @@
 en:
   hello: "Hello world"
 
-Internal Database URL: postgresql://book_store_data_base_user:rgIsPwxlE3gHEjtIsZzbYQONluEU2rD4@dpg-d4rgvda4d50c73d8ooug-a/book_store_data_base
+# Internal Database URL: postgresql://book_store_data_base_user:rgIsPwxlE3gHEjtIsZzbYQONluEU2rD4@dpg-d4rgvda4d50c73d8ooug-a/book_store_data_base

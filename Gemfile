@@ -12,7 +12,7 @@ gem 'active_model_serializers'
 
 gem "byebug"
 gem 'jwt'
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.21'
 gem 'rack-cors'
 
 
